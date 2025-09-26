@@ -4,20 +4,51 @@
 # Assignment: Week 1 - Python Primer Part 1
 # Due Date: September 28, 2025
 ####################################################
+import random
 
 def main():
     #open a file numbers.txt for writing
-    #file object should be named nums
+    #open file to be able to write to file
+    nums = open('numbers2.txt', 'w')
 
     #use a for loop and randint method to write
     #10 numbers to the file , between 1-1000
     #each num converted to a str, and have \n added to it
+    for i in range(10):
+        n = random.randint(1,1000)
+        nums.write(str(n) + '\n')
 
-    #close file
+    nums.close()
+
+    with open('numbers3.txt', 'w') as nums:
+        for i in range(10):
+            nums.write(str(random.randint(1,1000)) + '\n')
 
     #open file again, but for reading
-    #create a function evensodds with 1 parameter for file
+    nums = open('numbers2.txt', 'r')
+    print(evensodds(nums))
+    nums.close()
+    
+
+#create a function evensodds with 1 parameter for file
+def evensodds(file):
+    oddCount = 0
+    evenCount = 0
+
+    n = file.readline() 
+
+    while n in file != "":
+        if int(n.rstrip('\n')) % 2 == 0:
+            evenCount += 1
+        elif int(n.strip('\n')) % 2 != 0:
+            oddCount += 1
+        else:
+            print("number could not be read.")
+        
+        return "There are {evenCount} even numbers and {oddCount} odd numbers in the file."
 
 
-#def evensodds(newfile):
-    #code here
+
+
+
+main()
