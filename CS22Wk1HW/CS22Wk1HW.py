@@ -35,18 +35,22 @@ def evensodds(file):
     oddCount = 0
     evenCount = 0
 
-    while file.readline() != "":
-        for n in file:
-            num = int(n.rstrip('\n'))
+    line = file.readline()
 
-            if num % 2 == 0:
-                evenCount += 1
-            elif num % 2 != 0:
-                oddCount += 1
-            else:
-                print("number could not be read.")
+    while line != "":
+        num = int(line.rstrip('\n'))
+
+        if num % 2 == 0:
+            evenCount += 1
+        elif num % 2 != 0:
+            oddCount += 1
+        else:
+            print("number could not be read.")
+
+        line = file.readline()
+    
+    return f"There are {evenCount} even numbers and {oddCount} odd numbers in the file."
+    
         
-        return f"There are {evenCount} even numbers and {oddCount} odd numbers in the file."
-
 
 main()
