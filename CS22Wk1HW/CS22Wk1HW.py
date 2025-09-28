@@ -7,50 +7,54 @@
 import random
 
 def main():
-    #open a file numbers.txt for writing
-    #open file to be able to write to file
+    #open a file for writing
     nums = open('numbers2.txt', 'w')
 
-    #use a for loop and randint method to write
-    #10 numbers to the file , between 1-1000
-    #each num converted to a str, and have \n added to it
+    #use for loop and randint method to write 10 nums to the file
     for i in range(10):
         n = random.randint(1,1000)
         nums.write(str(n) + '\n')
 
+    #close file
     nums.close()
-
-    with open('numbers3.txt', 'w') as nums:
-        for i in range(10):
-            nums.write(str(random.randint(1,1000)) + '\n')
 
     #open file again, but for reading
     nums = open('numbers2.txt', 'r')
+
+    #call evensodds, pass nums as parameter
     print(evensodds(nums))
     nums.close()
     
 
-#create a function evensodds with 1 parameter for file
+# Function evensodd() accepts a file parameter and reads each number in the file
+# Returns a string with how many even and odd numbers found
 def evensodds(file):
     oddCount = 0
     evenCount = 0
 
+    #read first line of the file
     line = file.readline()
 
+    #while first line of file is not empty, read the string, strip the newline and convert to int
     while line != "":
         num = int(line.rstrip('\n'))
 
+        #if number is even or odd
         if num % 2 == 0:
             evenCount += 1
         elif num % 2 != 0:
             oddCount += 1
         else:
+            #else print msg that number count not be read
             print("number could not be read.")
 
+        #read next line in the file
         line = file.readline()
     
+    #return oddCount and evenCount
     return f"There are {evenCount} even numbers and {oddCount} odd numbers in the file."
     
-        
 
 main()
+
+
