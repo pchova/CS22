@@ -76,9 +76,6 @@ def evensodds(file):
             evenCount += 1
         elif num % 2 != 0:
             oddCount += 1
-        else:
-            #else print msg that number count not be read
-            print("number could not be read.")
 
         #read next line in the file
         line = file.readline()
