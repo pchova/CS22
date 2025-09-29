@@ -8,22 +8,38 @@ import random
 
 def main():
     #open a file for writing
-    nums = open('numbers2.txt', 'w')
+    nums = open('numbers.txt', 'w')
 
     #use for loop and randint method to write 10 nums to the file
     for i in range(10):
         n = random.randint(1,1000)
         nums.write(str(n) + '\n')
 
-    #close file
     nums.close()
 
     #open file again, but for reading
-    nums = open('numbers2.txt', 'r')
+    nums = open('numbers.txt', 'r')
 
     #call evensodds, pass nums as parameter
     print(evensodds(nums))
     nums.close()
+
+    #open 'steps.txt' file for reading
+    with open('steps.txt', 'r') as steps:
+        for i in range(12):
+            print(get_steps(steps))
+
+
+def get_steps(month, days, file):
+#use for loop to read number of steps for 
+#each day of the month
+#get total num of steps for the month
+#when for loop is finished, calculate avg num
+#of steps i nthe month using //
+#use print function to display the month and avg
+#num of steps in a sentence
+
+
     
 
 # Function evensodd() accepts a file parameter and reads each number in the file
