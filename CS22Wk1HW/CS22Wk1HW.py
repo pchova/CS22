@@ -20,11 +20,11 @@ def main():
     #open file again, but for reading
     nums = open('numbers.txt', 'r')
 
-    #call evensodds, pass nums as parameter
+    #call evensodds(), pass nums as parameter
     print(evensodds(nums))
     nums.close()
 
-    #open 'steps.txt' file for reading
+    #open 'steps.txt' file for reading, call get_steps() for each month
     with open('steps.txt', 'r') as steps:
         get_steps('January', 31, steps)
         get_steps('February', 28, steps)
@@ -40,8 +40,9 @@ def main():
         get_steps('December', 31, steps)
 
 
-# Function get_steps accepts a string for mont, int for days in the month
-#and a file object
+# Function get_steps() accepts a string for month, 
+# int for days in the month, and a file object
+# Prints statement with average num of steps per month
 def get_steps(month, days, file):
     total = 0
 
@@ -54,11 +55,11 @@ def get_steps(month, days, file):
     #calculate avg number of steps in the month
     avgNum = total // days
 
-    #display the month and average number of steps
+    #print the month and average number of steps
     print(f"User walked an average of {avgNum} steps in {month}")
 
 
-# Function evensodd() accepts a file parameter and reads each number in the file
+# Function evensodds() accepts a file parameter and reads each number in the file
 # Returns a string with how many even and odd numbers found
 def evensodds(file):
     oddCount = 0
