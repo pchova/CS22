@@ -26,21 +26,37 @@ def main():
 
     #open 'steps.txt' file for reading
     with open('steps.txt', 'r') as steps:
-        for i in range(12):
-            print(get_steps(steps))
+        get_steps('January', 31, steps)
+        get_steps('February', 28, steps)
+        get_steps('March', 31, steps)
+        get_steps('April', 30, steps)
+        get_steps('May', 31, steps)
+        get_steps('June', 30, steps)
+        get_steps('July', 31, steps)
+        get_steps('August', 31, steps)
+        get_steps('September', 30, steps)
+        get_steps('October', 31, steps)
+        get_steps('November', 30, steps)
+        get_steps('December', 31, steps)
 
 
+# Function get_steps accepts a string for mont, int for days in the month
+#and a file object
 def get_steps(month, days, file):
-#use for loop to read number of steps for 
-#each day of the month
-#get total num of steps for the month
-#when for loop is finished, calculate avg num
-#of steps i nthe month using //
-#use print function to display the month and avg
-#num of steps in a sentence
+    total = 0
 
+    #read number of steps for each day of the month
+    for i in range(days):
+        line = file.readline()
+        steps = int(line.rstrip('\n'))
+        total += steps
 
-    
+    #calculate avg number of steps in the month
+    avgNum = total // days
+
+    #display the month and average number of steps
+    print(f"User walked an average of {avgNum} steps in {month}")
+
 
 # Function evensodd() accepts a file parameter and reads each number in the file
 # Returns a string with how many even and odd numbers found
