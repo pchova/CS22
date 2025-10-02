@@ -15,4 +15,8 @@ def main():
         randNumber = random.randint(1,100)
         nums_list[i] = randNumber
 
+    #take user input and convert it to int variable
+    the_num = int(input("Enter a number: "))
+    print(type(the_num))
+
 main()
