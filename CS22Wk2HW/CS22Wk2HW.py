@@ -28,24 +28,34 @@ def main():
     statecaps = {}
 
     #open file for reading 
-    #proxy = open('statecapitals.txt', 'r')
     with open('statecapitals.txt', 'r') as proxy:
 
         # Populate the dictionary so that each state/capital is a key/value pair
         state = proxy.readline().rstrip("\n")
         capital = proxy.readline().rstrip("\n")
 
+        # while there no lines left, read each line for the state and capital
+        # add each pair to statecaps dictionary
         while state != "":
             statecaps[state] = capital
             state = proxy.readline().rstrip("\n")
             capital = proxy.readline().rstrip("\n")
-    
-    #proxy.close()
 
     print(statecaps)
 
+    rightAnswers = 0
+    wrongAnswers = 0
 
+    for key in statecaps:
+        userInput = input(f"What is the capital of {key}: ")
+        if userInput != statecaps[key]:
+            print(f"Wrong! The correct answer is {statecaps[key]}")
+            wrongAnswers += 1
+        elif userInput == statecaps[key]:
+            print(f"Right! The answer is {statecaps[key]}")
+            rightAnswers += 1
 
+    print(f"You got {rightAnswers} answer(s) right and {wrongAnswers} answer(s) wrong")
 
 
 
