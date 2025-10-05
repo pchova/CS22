@@ -7,6 +7,7 @@
 import random
 
 def main():
+    #Program 1
     #declare an array with 5 elements
     nums_list = [0] * 5
 
@@ -21,6 +22,35 @@ def main():
 
     print("Here is your list: ", nums_list)
     print(bigsmall(the_num, nums_list))
+    print()
+
+    #Program 2
+    statecaps = {}
+
+    #open file for reading 
+    proxy = open('statecapitals.txt', 'r')
+
+    # Using either a while loop or a for loop (while loop worked best for me), 
+    # populate the dictionary so that each state is a key and the capital of 
+    # the state is the value associated with that key. Use the readline() function 
+    # to read each line of data and the rstrip method to remove the ‘\n’ character
+    # from the end of each line.
+    state = proxy.readline().rstrip("\n")
+    capital = proxy.readline().rstrip("\n")
+
+    while state != "":
+        statecaps[state] = capital
+        state = proxy.readline().rstrip("\n")
+        capital = proxy.readline().rstrip("\n")
+    
+    proxy.close()
+
+    print(statecaps)
+
+
+
+
+
 
 def bigsmall(num, list):
     i = 0
@@ -29,14 +59,17 @@ def bigsmall(num, list):
     #while count is less than length of the list, go through to find num > user input
     while i < len(list):
         if list[i] > num:
-            largerNums.append(list[i])
+            largerNums.append(list[i])  
         i += 1
     
     #convert largerNums list to str and join them with a single space
     formatNums = " ".join(str(num) for num in largerNums)
     
     #return numbers greater than user input
-    return f"Numbers greater than {num}: {formatNums}"
+    if not largerNums:
+        return f"There are no numbers greater than {num} in the list."
+    else:
+        return f"Numbers greater than {num}: {formatNums}"
         
 
 main()
