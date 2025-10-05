@@ -18,11 +18,9 @@ def main():
 
     #take user input and convert it to int variable
     the_num = int(input("Enter an integer: "))
-    #print(type(the_num))
 
     print("Here is your list: ", nums_list)
     print(bigsmall(the_num, nums_list))
-    print()
 
     #Program 2
     statecaps = {}
@@ -41,32 +39,35 @@ def main():
             state = proxy.readline().rstrip("\n")
             capital = proxy.readline().rstrip("\n")
 
-    print(statecaps)
-
     rightAnswers = 0
     wrongAnswers = 0
 
+    # loop through each key in statecaps
     for key in statecaps:
+        # get user input for state capitol
         userInput = input(f"What is the capital of {key}: ")
-        if userInput != statecaps[key]:
-            print(f"Wrong! The correct answer is {statecaps[key]}")
-            wrongAnswers += 1
-        elif userInput == statecaps[key]:
+        # if user input is correct or wrong, display appropriate msg
+        if userInput == statecaps[key]:
             print(f"Right! The answer is {statecaps[key]}")
             rightAnswers += 1
+        else:
+            print(f"Wrong! The correct answer is {statecaps[key]}")
+            wrongAnswers += 1
 
-    print(f"You got {rightAnswers} answer(s) right and {wrongAnswers} answer(s) wrong")
+    # display count of right and wrong answers to users
+    print(f"You got {rightAnswers} answer(s) right and {wrongAnswers} answer(s) wrong.")
 
 
-
-def bigsmall(num, list):
+# bigsmall() function accepts a number and list as parameters
+# function goes through the list and returns a new list of numbers that is greater than number
+def bigsmall(num, num_list):
     i = 0
     largerNums = []
 
     #while count is less than length of the list, go through to find num > user input
-    while i < len(list):
-        if list[i] > num:
-            largerNums.append(list[i])  
+    while i < len(num_list):
+        if num_list[i] > num:
+            largerNums.append(num_list[i])  
         i += 1
     
     #convert largerNums list to str and join them with a single space
