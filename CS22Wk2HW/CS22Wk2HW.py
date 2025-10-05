@@ -28,22 +28,19 @@ def main():
     statecaps = {}
 
     #open file for reading 
-    proxy = open('statecapitals.txt', 'r')
+    #proxy = open('statecapitals.txt', 'r')
+    with open('statecapitals.txt', 'r') as proxy:
 
-    # Using either a while loop or a for loop (while loop worked best for me), 
-    # populate the dictionary so that each state is a key and the capital of 
-    # the state is the value associated with that key. Use the readline() function 
-    # to read each line of data and the rstrip method to remove the ‘\n’ character
-    # from the end of each line.
-    state = proxy.readline().rstrip("\n")
-    capital = proxy.readline().rstrip("\n")
-
-    while state != "":
-        statecaps[state] = capital
+        # Populate the dictionary so that each state/capital is a key/value pair
         state = proxy.readline().rstrip("\n")
         capital = proxy.readline().rstrip("\n")
+
+        while state != "":
+            statecaps[state] = capital
+            state = proxy.readline().rstrip("\n")
+            capital = proxy.readline().rstrip("\n")
     
-    proxy.close()
+    #proxy.close()
 
     print(statecaps)
 
@@ -65,7 +62,7 @@ def bigsmall(num, list):
     #convert largerNums list to str and join them with a single space
     formatNums = " ".join(str(num) for num in largerNums)
     
-    #return numbers greater than user input
+    #return numbers greater than user input or write none
     if not largerNums:
         return f"There are no numbers greater than {num} in the list."
     else:
