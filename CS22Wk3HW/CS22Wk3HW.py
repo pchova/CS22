@@ -24,3 +24,13 @@ class Employee:
     
     def get_employeeNumber(self):
         return self.__employee_number
+
+#Production Worker class inherits from Employee class
+class ProductionWorker(Employee):
+    def __init__(self, name, num, shift, pay):
+        Employee.__init__(self, name, num)
+
+        self.__shift_number = shift
+        self.__hourly_pay_rate = pay
+
+    
