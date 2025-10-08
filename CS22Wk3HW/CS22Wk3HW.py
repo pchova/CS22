@@ -33,4 +33,10 @@ class ProductionWorker(Employee):
         self.__shift_number = shift
         self.__hourly_pay_rate = pay
 
+    #Setter functions for Production Worker Attributes
+    def get_shiftNumber(self, shift):
+        self.__shift_number = shift
+
+    def get_hourlyPayRate(self, pay):
+        self.__hourly_pay_rate = pay
     
