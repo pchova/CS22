@@ -15,7 +15,12 @@ class Employee:
         self.__employee_name = name
     
     def set_employeeNumber(self, num):
-        self.__employee_number = numb
+        self.__employee_number = num
 
     
-
+    #Getter Functions
+    def get_employeeName(self):
+        return self.__employee_name
+    
+    def get_employeeNumber(self):
+        return self.__employee_number
