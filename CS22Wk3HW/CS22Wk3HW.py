@@ -10,4 +10,12 @@ class Employee:
         self.__employee_name = name
         self.__employee_num = num
 
+    #Setter Functions
+    def set_employeeName(self, name):
+        self.__employee_name = name
     
+    def set_employeeNumber(self, num):
+        self.__employee_number = numb
+
+    
+
