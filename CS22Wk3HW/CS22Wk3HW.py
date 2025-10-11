@@ -8,7 +8,7 @@
 class Employee:
     def __init__(self, name, num):
         self.__employee_name = name
-        self.__employee_num = num
+        self.__employee_number = num
 
     #Setter Functions
     def set_employeeName(self, name):
@@ -67,3 +67,17 @@ class ShiftSupervisor(Employee):
     
     def get_annual_bonus(self):
         return self.__annual_bonus
+    
+def main():
+    #Get user input for production worker
+    name = input("Enter name of production worker: ")
+    empNumber = input("Enter the employee number: ")
+    shiftNumber = input("Enter 1 for first shift, 2 for second shift, or 3 for third shift: ")
+    hourlyPay = input("Enter hourly pay rate: ")
+
+    #Create instance of production worker with user input
+    worker = ProductionWorker(name, empNumber, shiftNumber, hourlyPay)
+    print(f"{worker.get_employeeName()} (employee #{worker.get_employeeNumber()}) works shift {worker.get_shiftNumber()} and makes ${worker.get_hourlyPayRate()} per hour.")
+
+main()
+        
