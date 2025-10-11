@@ -51,4 +51,19 @@ class ShiftSupervisor(Employee):
     def __init__(self, name, num, salary, bonus):
         super().__init__(self, name, num)
 
-        
+        self.__yearly_salary = salary
+        self.__annual_bonus = bonus
+
+    #Setter functions for ShiftSupervisor attributes
+    def set_yearly_salary(self, salary):
+        self.__yearly_salary = salary
+
+    def set_annual_bonus(self, bonus):
+        self.__annual_bonus = bonus
+    
+    #Getter function for ShifySupervisor attributes
+    def get_yearly_salary(self):
+        return self.__yearly_salary
+    
+    def get_annual_bonus(self):
+        return self.__annual_bonus
