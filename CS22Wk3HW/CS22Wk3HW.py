@@ -17,7 +17,6 @@ class Employee:
     def set_employeeNumber(self, num):
         self.__employee_number = num
 
-    
     #Getter Functions
     def get_employeeName(self):
         return self.__employee_name
@@ -46,3 +45,10 @@ class ProductionWorker(Employee):
     
     def get_hourlyPayRate(self):
         return self.__hourly_pay_rate
+    
+#Shift Supervisor class inherits from the Employee class
+class ShiftSupervisor(Employee):
+    def __init__(self, name, num, salary, bonus):
+        super().__init__(self, name, num)
+
+        
