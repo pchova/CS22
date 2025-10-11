@@ -70,15 +70,16 @@ class ShiftSupervisor(Employee):
     
 def main():
     #Get user input for production worker
-    #name = input("Enter name of production worker: ")
-    #empNumber = input("Enter the employee number: ")
-    #shiftNumber = input("Enter 1 for first shift, 2 for second shift, or 3 for third shift: ")
-    #hourlyPay = input("Enter hourly pay rate: ")
+    name = input("Enter name of production worker: ")
+    empNumber = input("Enter the employee number: ")
+    shiftNumber = input("Enter 1 for first shift, 2 for second shift, or 3 for third shift: ")
+    hourlyPay = float(input("Enter hourly pay rate: "))
 
     #Create instance of production worker with user input
-    #worker = ProductionWorker(name, empNumber, shiftNumber, hourlyPay)
-    #print(f"{worker.get_employeeName()} (employee #{worker.get_employeeNumber()}) works shift {worker.get_shiftNumber()} and makes ${worker.get_hourlyPayRate()} per hour.")
-
+    worker = ProductionWorker(name, empNumber, shiftNumber, hourlyPay)
+    print(f"{worker.get_employeeName()} (employee #{worker.get_employeeNumber()})",
+          f"works shift {worker.get_shiftNumber()}",
+          f"and makes ${worker.get_hourlyPayRate():.2f} per hour.")
 
     #Get user input for shift supervisor
     supName = input("Enter name of supervisor: ")
@@ -88,8 +89,8 @@ def main():
     
     supervisor = ShiftSupervisor(supName, supNumber, salary, bonus)
     print(f"{supervisor.get_employeeName()} (employee #{supervisor.get_employeeNumber()})",
-          f"makes ${supervisor.get_yearly_salary():.2f} per year",
-          f"and could get a bonus of ${supervisor.get_annual_bonus():.2f}")
+          f"makes ${supervisor.get_yearly_salary():,.2f} per year",
+          f"and could get a bonus of ${supervisor.get_annual_bonus():,.2f}.")
 
 main()
         
