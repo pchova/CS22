@@ -81,6 +81,7 @@ def main():
           f"works shift {worker.get_shiftNumber()}",
           f"and makes ${worker.get_hourlyPayRate():.2f} per hour.")
 
+    print()
     #Get user input for shift supervisor
     supName = input("Enter name of supervisor: ")
     supNumber = input("Enter the employee number: ")
