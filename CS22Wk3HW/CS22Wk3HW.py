@@ -49,7 +49,7 @@ class ProductionWorker(Employee):
 #Shift Supervisor class inherits from the Employee class
 class ShiftSupervisor(Employee):
     def __init__(self, name, num, salary, bonus):
-        super().__init__(self, name, num)
+        super().__init__(name, num)
 
         self.__yearly_salary = salary
         self.__annual_bonus = bonus
@@ -70,14 +70,26 @@ class ShiftSupervisor(Employee):
     
 def main():
     #Get user input for production worker
-    name = input("Enter name of production worker: ")
-    empNumber = input("Enter the employee number: ")
-    shiftNumber = input("Enter 1 for first shift, 2 for second shift, or 3 for third shift: ")
-    hourlyPay = input("Enter hourly pay rate: ")
+    #name = input("Enter name of production worker: ")
+    #empNumber = input("Enter the employee number: ")
+    #shiftNumber = input("Enter 1 for first shift, 2 for second shift, or 3 for third shift: ")
+    #hourlyPay = input("Enter hourly pay rate: ")
 
     #Create instance of production worker with user input
-    worker = ProductionWorker(name, empNumber, shiftNumber, hourlyPay)
-    print(f"{worker.get_employeeName()} (employee #{worker.get_employeeNumber()}) works shift {worker.get_shiftNumber()} and makes ${worker.get_hourlyPayRate()} per hour.")
+    #worker = ProductionWorker(name, empNumber, shiftNumber, hourlyPay)
+    #print(f"{worker.get_employeeName()} (employee #{worker.get_employeeNumber()}) works shift {worker.get_shiftNumber()} and makes ${worker.get_hourlyPayRate()} per hour.")
+
+
+    #Get user input for shift supervisor
+    supName = input("Enter name of supervisor: ")
+    supNumber = input("Enter the employee number: ")
+    salary = float(input("Enter yearly salary: "))
+    bonus = float(input("Enter bonus amount: "))
+    
+    supervisor = ShiftSupervisor(supName, supNumber, salary, bonus)
+    print(f"{supervisor.get_employeeName()} (employee #{supervisor.get_employeeNumber()})",
+          f"makes ${supervisor.get_yearly_salary():.2f} per year",
+          f"and could get a bonus of ${supervisor.get_annual_bonus():.2f}")
 
 main()
         
