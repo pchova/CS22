@@ -6,6 +6,7 @@
 ####################################################
 
 class Athlete:
+    #Athlete constructor accepts 3 parameters
     def __init__(self, name, country, sport):
         self.__name = name
         self.__country = country
@@ -31,5 +32,13 @@ class Athlete:
     def set_sport(self):
         return self.___sport
     
+class TeamSport(Athlete):
+    #TeamSport constructor accepts 5 parameters
+    def __init__(self, name, country, sport, pos, won):
+        super().__init__(name, country, sport)
+
+        self.__position = pos
+        self.__gamesWon = won
     
+
     
