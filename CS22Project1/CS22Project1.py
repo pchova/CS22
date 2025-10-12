@@ -29,8 +29,8 @@ class Athlete:
     def get_country(self):
         return self.__country
     
-    def set_sport(self):
-        return self.___sport
+    def get_sport(self):
+        return self.__sport
     
 class TeamSport(Athlete):
     #TeamSport constructor accepts 5 parameters
@@ -76,7 +76,29 @@ class IndividualSport(Athlete):
     def get_playerChampionshipsWon(self):
         return self.__playerChampionshipsWon
 
+def main():
+    wayne = TeamSport('Wayne Gretzky', 'Canada', 'Hockey', 'Center', 4)
+    tom = TeamSport('Tom Brady', 'United States', 'Football', 'Quarterback', 7)
+    lionel = TeamSport('Lionel Messi', 'Argentina', 'Soccer', 'Forward', 14)
+    roger = IndividualSport('Roger Federer', 'Switzerland', 'Tennis', 130594339, 20)
+    rory = IndividualSport('Rory Mcllroy', 'Northern Ireland', 'Golf', '125147336', 4)
 
+    team = [wayne, tom, lionel]
+    indy = [roger, rory]
+
+    for player in team:
+        print(f"{player.get_name()} is from {player.get_country()} and plays {player.get_sport()}.")
+        print(f"He played {player.get_position()} and won {player.get_leagueGamesWon()} league championships.")
+        print()
+    
+    for person in indy:
+        print(f"{person.get_name()} is from {person.get_country()} and plays {person.get_sport()}.")
+        print(f"He earned ${person.get_totalWinnings()} and won {person.get_playerChampionshipsWon()} major championships.")
+        print()
+
+               
+
+main()
 
     
 
