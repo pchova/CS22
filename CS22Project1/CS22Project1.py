@@ -40,5 +40,17 @@ class TeamSport(Athlete):
         self.__position = pos
         self.__gamesWon = won
     
+    #Setter Methods for TeamSport class
+    def set_position(self, pos):
+        self.__position = pos
 
+    def set_gamesWon(self, won):
+        self.__gamesWon = won
+
+    #Getter Methods for TeamSport class
+    def get_position(self):
+        return self.__position
+    
+    def get_gamesWon(self):
+        return self.__gamesWon
     
