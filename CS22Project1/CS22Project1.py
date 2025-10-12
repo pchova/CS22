@@ -38,19 +38,46 @@ class TeamSport(Athlete):
         super().__init__(name, country, sport)
 
         self.__position = pos
-        self.__gamesWon = won
+        self.__leagueGamesWon = won
     
     #Setter Methods for TeamSport class
     def set_position(self, pos):
         self.__position = pos
 
-    def set_gamesWon(self, won):
-        self.__gamesWon = won
+    def set_leagueGamesWon(self, won):
+        self.__leagueGamesWon = won
 
     #Getter Methods for TeamSport class
     def get_position(self):
         return self.__position
     
-    def get_gamesWon(self):
-        return self.__gamesWon
+    def get_leagueGamesWon(self):
+        return self.__leagueGamesWon
+    
+class IndividualSport(Athlete):
+    #IndividualSport constructor accepts 5 parameters
+    def __init__(self, name, country, sport, winnings, mc):
+        super().__init__(name, country, sport)
+
+        self.__totalWinnings = winnings
+        self.__playerChampionshipsWon = mc
+    
+    #Setter Methods for IndividualSport class
+    def set_totalWinnings(self, win):
+        self.__totalWinnings = win
+
+    def set_playerChampionshipsWon(self, mc):
+        self.__playerChampionshipsWon = mc
+
+    #Getter Methods for IndividualSport class
+    def get_totalWinnings(self):
+        return self.__totalWinnings
+    
+    def get_playerChampionshipsWon(self):
+        return self.__playerChampionshipsWon
+
+
+
+    
+
     
