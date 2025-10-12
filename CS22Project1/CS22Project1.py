@@ -4,7 +4,6 @@
 # Assignment: Project 1
 # Due Date: October 20 2025
 ####################################################
-
 class Athlete:
     #Athlete constructor accepts 3 parameters
     def __init__(self, name, country, sport):
@@ -93,10 +92,8 @@ def main():
     
     for person in indy:
         print(f"{person.get_name()} is from {person.get_country()} and plays {person.get_sport()}.")
-        print(f"He earned ${person.get_totalWinnings()} and won {person.get_playerChampionshipsWon()} major championships.")
-        print()
-
-               
+        print(f"He earned ${float(person.get_totalWinnings()):,.2f} and won {person.get_playerChampionshipsWon()} major championships.")
+        print()            
 
 main()
 
