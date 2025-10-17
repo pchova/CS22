@@ -27,19 +27,27 @@ def set_list2D(list):
             list[x][y] = random.randint(0,500)
     return list
 
-#def show_list2D(list):
+def show_list2D(list):
+    for x in range(0, len(list)):
+        for y in range(0, len(list)):
+            print(list[x][y], end= ' ')
+        print()
+    print()
 
 def main():
     #create a 1 dimensional array with 10 elements
-    #list1 = [0] * 10
-    #print(list1)
-    #print(set_list1D(list1))
-    #show_list1D(list1)
+    list1 = [0] * 10
+    print(list1)
+    set_list1D(list1)
+    show_list1D(list1)
+
+    print()
 
     #create a 2 dimensional array with 10 rows and 10 columns
     #list2 = [[0] * 10] * 10 - this is wrong! this creates a shallow copy!
     list2 = [[0] * 10 for i in range(10)]
     print(list2)
-    print(set_list2D(list2))
+    set_list2D(list2)
+    show_list2D(list2)
 
 main()
