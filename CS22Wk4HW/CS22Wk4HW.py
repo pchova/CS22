@@ -36,18 +36,27 @@ def show_list2D(list):
 
 def main():
     #create a 1 dimensional array with 10 elements
-    list1 = [0] * 10
-    print(list1)
-    set_list1D(list1)
-    show_list1D(list1)
+    #list1 = [0] * 10
+    #print(list1)
+    #set_list1D(list1)
+    #show_list1D(list1)
 
-    print()
+    #print()
 
     #create a 2 dimensional array with 10 rows and 10 columns
     #list2 = [[0] * 10] * 10 - this is wrong! this creates a shallow copy!
+    #list2 = [[0] * 10 for i in range(10)]
+    #print(list2)
+    #set_list2D(list2)
+    #show_list2D(list2)
+
+    list1 = [0] * 10
     list2 = [[0] * 10 for i in range(10)]
-    print(list2)
-    set_list2D(list2)
-    show_list2D(list2)
+
+    start_time = time.perf_counter()
+    set_list1D(list1)
+    total_time = time.perf_counter() - start_time
+    print(f"set_list1D took {total_time} seconds to execute.")
+    
 
 main()
