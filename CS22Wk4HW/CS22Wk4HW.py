@@ -53,18 +53,19 @@ def main():
     list1 = [0] * 10
     list2 = [[0] * 10 for i in range(10)]
 
-    #Show clock cycles i.e. 
+    #Show clock cycles i.e. using time.perf_counter()
     #how long the function takes to execute for a one dimensional array
     start_time1 = time.perf_counter()
     set_list1D(list1)
     total_time1 = time.perf_counter() - start_time1
     print(f"set_list1D took {total_time1} seconds to execute.")
 
-    start_time2 = timeit.default_timer()
+    start_time2 = time.perf_counter()
     show_list1D(list1)
-    total_time2 = timeit.default_timer() - start_time2
+    total_time2 = time.perf_counter() - start_time2
     print(f"show_list1D took {total_time2} seconds to execute.")
 
     print()
+
 
 main()
