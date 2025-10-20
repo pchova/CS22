@@ -53,8 +53,8 @@ def main():
     list1 = [0] * 10
     list2 = [[0] * 10 for i in range(10)]
 
-    #Show clock cycles i.e. using time.perf_counter()
-    #how long the function takes to execute for a one dimensional array
+    # Show clock cycles using time.perf_counter()
+    # how long the function takes to execute for a one dimensional array
     start_time1 = time.perf_counter()
     set_list1D(list1)
     total_time1 = time.perf_counter() - start_time1
@@ -67,5 +67,14 @@ def main():
 
     print()
 
+    # Show clock cycles using timeit.default_timer()
+    # how long the function takes to execute for a two dimensional arry
+    start = timeit.default_timer()
+    set_list2D(list2)
+    total = timeit.default_timer() - start
+    print(f"set_list2D took {total} seconds to execute.")
+
+
+    
 
 main()
