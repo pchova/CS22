@@ -32,7 +32,6 @@ def show_list2D(list):
         for y in range(0, len(list)):
             print(list[x][y], end= ' ')
         print()
-    print()
 
 def main():
     #create a 1 dimensional array with 10 elements
@@ -74,7 +73,10 @@ def main():
     total = timeit.default_timer() - start
     print(f"set_list2D took {total} seconds to execute.")
 
+    start2 = timeit.default_timer()
+    show_list2D(list2)
+    total2 = timeit.default_timer() - start2
+    print(f"show_list2D took {total2} seconds to execute.")
 
-    
 
 main()
