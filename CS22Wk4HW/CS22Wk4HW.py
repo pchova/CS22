@@ -23,7 +23,7 @@ def show_list1D(list):
 
 def set_list2D(list):
     for x in range(0, len(list)):
-        for y in range(0, len(list)):
+        for y in range(0, len(list[x])):
             list[x][y] = random.randint(0,500)
     return list
 
