@@ -13,7 +13,7 @@ def main():
     print()
 
     numbers = int(input("Enter a number greater than 0: "))
-    print("The sume of the numbers from 1 to", numbers, "is", rec_sum(numbers))
+    print("The sum of the numbers from 1 to", numbers, "is", rec_sum(numbers))
 
     print()
 
