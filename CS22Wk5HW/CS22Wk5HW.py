@@ -8,8 +8,22 @@
 def main():
     input1 = int(input('Enter a number greater than 0: '))
     input2 = int(input('Enter a second number greater than 0: '))
+    print(input1, "*", input2,"=",rec_mult(input1, input2))
 
-    print(input1, " * ", input2," = ",rec_mult(input1, input2))
+    print()
+
+    numbers = int(input("Enter a number greater than 0: "))
+    print("The sume of the numbers from 1 to", numbers, "is", rec_sum(numbers))
+
+# Function rec_sum() accepts 1 integer parameter to recursively add the sum
+# of all integers to the parameter (inclusive)
+def rec_sum(n):
+    #base case, once n equals zero return 0
+    if n == 0:
+        return 0
+    else:
+        #add n + (n-1) till n = 0
+        return n + rec_sum(n-1)
 
 # Function rec_mult() accepts two integer parameters to recursively find the
 # multiplication sum. Achieved by repeated addition of the int 'y'... 'x' amount of times
