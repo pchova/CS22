@@ -15,6 +15,20 @@ def main():
     numbers = int(input("Enter a number greater than 0: "))
     print("The sume of the numbers from 1 to", numbers, "is", rec_sum(numbers))
 
+    print()
+
+    my_list = [4, 13, 20, 18, 26, 28, 33, 44]
+    print("The sum of the elements of",my_list,"is",rec_list_sum(my_list))
+
+# Function rec_list_sum() accepts a list parameter to recursively add
+# each item in the list and return its sum
+def rec_list_sum(list):
+    #base case - when list ends return 0 
+    if not list:
+        return 0
+    else:
+        return list[0] + rec_list_sum(list[1:])
+
 # Function rec_sum() accepts 1 integer parameter to recursively add the sum
 # of all integers to the parameter (inclusive)
 def rec_sum(n):
