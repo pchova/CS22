@@ -1,0 +1,59 @@
+####################################################
+# CS 22, Prof. Muldrow
+# Name: Polina Chetnikova
+# Assignment: Week 2 Homework Assignment
+# Due Date: November 2 2025
+####################################################
+class ArrayStack():
+    def __init__(self):
+        self.__stack = []
+        self.__size = 0
+
+    def get_stack(self):
+        return self.__stack
+    
+    def get_size(self):
+        return self.__size
+    
+    def push(self, e):
+        self.__stack.append(e)
+        self.__size += 1
+    
+    def is_empty(self):
+        return len(self.__stack) == 0
+
+    def pop(self):
+        if self.is_empty():
+            return 'Stack is empty'
+        else:
+            val = self.__stack[-1]
+            del self.__stack[-1]
+            self.__size -= 1
+            return val
+        
+def main():
+    #Calls for ArrayStack class
+    S = ArrayStack()
+    S.push(20)
+    S.push(43)
+    S.push(15)
+    print('S =', S.get_stack())
+    print('Size of S =', S.get_size())
+    print('Pop =', S.pop())
+    print('Pop =', S.pop()) 
+    print('S =', S.get_stack())
+    print('Size of S =', S.get_size())
+    S.push(55)
+    print('S =', S.get_stack())
+    print('Size of S =', S.get_size())
+
+    print('Pop =', S.pop())
+    print('Pop =', S.pop())
+    print('S =', S.get_stack())
+    print('Size of S =', S.get_size())
+    print('Pop =', S.pop())
+    print()
+
+    #Calls for QueueStack class
+
+main()
