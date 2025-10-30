@@ -90,5 +90,25 @@ def main():
     print()
 
     #Calls for QueueStack class
+    Q = ArrayQueue()
+    Q.enqueue(44)
+    Q.enqueue(33)
+    Q.enqueue(77)
+    print('Q =', Q.get_queue())
+    print('Size of Q =',Q.get_size())
+    print('DQ =', Q.dequeue())
+    print('DQ =', Q.dequeue())
+    print('Q =', Q.get_queue())
+    print('Size of Q =', Q.get_size())
+    Q.enqueue(11)
+    print('Q =', Q.get_queue())
+    print('Size of Q =', Q.get_size())
+    print('DQ =', Q.dequeue())
+    print('DQ =', Q.dequeue())
+    print('Q =', Q.get_queue())
+    print('Size of Q =', Q.get_size())
+    print('DQ =', Q.dequeue())
+
+
 
 main()
