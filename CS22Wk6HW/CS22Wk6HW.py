@@ -5,7 +5,7 @@
 # Due Date: November 2 2025
 ####################################################
 
-# ArrayStack() class has 1 constructor that initializes a stack and size
+# ---- ArrayStack() class ----
 class ArrayStack():
     def __init__(self):
         self.__stack = []
@@ -33,7 +33,7 @@ class ArrayStack():
             self.__size -= 1
             return val
 
-# ArrayQueue() class has 1 constructor that initializes a queue and size
+# ---- ArrayQueue() class ----
 class ArrayQueue():
     def __init__(self):
         self.__data = []
@@ -68,7 +68,7 @@ class ArrayQueue():
         self.__data.append(e)
         self.__size += 1
 
-        
+# ---- Main Program ----      
 def main():
     #Calls for ArrayStack class
     S = ArrayStack()
