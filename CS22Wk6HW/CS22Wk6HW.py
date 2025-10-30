@@ -31,6 +31,41 @@ class ArrayStack():
             self.__size -= 1
             return val
         
+class ArrayQueue():
+    def __init__(self):
+        self.__data = []
+        self.__size = 0
+
+    def get_queue(self):
+        return self.__data
+
+    def get_size(self):
+        return self.__size
+    
+    def is_empty(self):
+        return self.__size == 0
+    
+    def first(self):
+        if self.is_empty():
+            return 'Queue is empty'
+        return self.__data[0]
+    
+    #elements removed from the bottom of the stack (first element in list)
+    def dequeue(self):
+        if self.is_empty():
+            return 'Queue is empty'
+        else:
+            val = self.__data[0]
+            del self.__data[0]
+            self.__size -= 1
+            return val
+    
+    #element added to the beginning of the stack (last element in list)
+    def enqueue(self, e):
+        self.__data.append(e)
+        self.__size += 1
+
+        
 def main():
     #Calls for ArrayStack class
     S = ArrayStack()
