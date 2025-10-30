@@ -4,6 +4,8 @@
 # Assignment: Week 6 Homework Assignment
 # Due Date: November 2 2025
 ####################################################
+
+# ArrayStack() class has 1 constructor that initializes a stack and size
 class ArrayStack():
     def __init__(self):
         self.__stack = []
@@ -30,7 +32,8 @@ class ArrayStack():
             del self.__stack[-1]
             self.__size -= 1
             return val
-        
+
+# ArrayQueue() class has 1 constructor that initializes a queue and size
 class ArrayQueue():
     def __init__(self):
         self.__data = []
