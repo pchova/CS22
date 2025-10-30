@@ -109,6 +109,4 @@ def main():
     print('Size of Q =', Q.get_size())
     print('DQ =', Q.dequeue())
 
-
-
 main()
