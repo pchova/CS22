@@ -1,7 +1,7 @@
 ####################################################
 # CS 22, Prof. Muldrow
 # Name: Polina Chetnikova
-# Assignment: Week 2 Homework Assignment
+# Assignment: Week 6 Homework Assignment
 # Due Date: November 2 2025
 ####################################################
 class ArrayStack():
