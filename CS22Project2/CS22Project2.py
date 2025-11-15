@@ -26,14 +26,15 @@ class CircularLinkedList:
             self.__head = new_node
             self.__tail = new_node
             new_node.next = new_node
-        #else, the new node should be inserted at the head of the list, AND
-        #the tail's next field should point to head
         else:
+            #new node points to current head
             new_node.next = self.__head
+            #head should now be the new node
             self.__head = new_node
+            #tail will point to the new node
             self.__tail.next = self.__head
 
-        #increases the size by 1
+        #increase size by 1
         self.__size += 1
     
     def insert_at_tail(self, data):
@@ -47,21 +48,38 @@ class CircularLinkedList:
         else:
             #old tail points to the new node
             self.__tail.next = new_node
-            #new node points to head
-            new_node.next = self.__head
             #tail should now be the new node
             self.__tail = new_node
+            #new node points to head
+            new_node.next = self.__head
 
-        #increases the size by 1
+        #increase size by 1
         self.__size += 1
 
     def remove_from_head(self):
-        #remove a node at the beginning of the list
+        #set temp to head
+        temp = self.__head
+
+        #if temp.next is None, set both and tail to none
+        if temp.next == None:
+            self.__head = None
+            self.__tail = None
+        else:
+            #set head to the next node
+            self.__head = temp.next
+
+            #if head.next equals tail, set tail.next to None 
+            if self.__head.next == self.__tail:
+                self.__tail.next = None
+            else:
+                #otherwise set tail.next to head
+                self.__tail.next = self.__head
+
+        #set temp.next to None
+        temp.next = None
 
         #decrease size by 1
         self.__size -= 1
-
-        #return the data field of the node that was removed
 
     def remove_from_tail(self):
         #remove a node at the end of the list
