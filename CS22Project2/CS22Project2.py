@@ -59,9 +59,10 @@ class CircularLinkedList:
     def remove_from_head(self):
         #set temp to head
         temp = self.__head
+        removed_data = temp.data
 
         #if temp.next is None, set both and tail to none
-        if temp.next == None:
+        if self.__head == self.__tail:
             self.__head = None
             self.__tail = None
         else:
@@ -69,25 +70,51 @@ class CircularLinkedList:
             self.__head = temp.next
 
             #if head.next equals tail, set tail.next to None 
-            if self.__head.next == self.__tail:
-                self.__tail.next = None
+            if self.__head == self.__tail:
+                self.__tail.next = self.__head
             else:
                 #otherwise set tail.next to head
                 self.__tail.next = self.__head
 
         #set temp.next to None
         temp.next = None
-
-        #decrease size by 1
+        
         self.__size -= 1
+        return removed_data
 
     def remove_from_tail(self):
-        #remove a node at the end of the list
+        #set temp equal to head
+        temp = self.__head
+        prev = None
 
-        #decrease size by 1
+        removed_data = temp.data
+
+        if self.__head == self.__tail:
+            self.__head = None
+            self.__tail = None
+        else:
+            #move temp to the last node
+            while temp.next != self.__head:
+                prev = temp
+                temp = temp.next
+
+            #now - temp is the last node
+            # prev is the node before temp
+            removed_data = temp.data
+
+            # set tail to prev after the loop
+            self.__tail = prev
+
+            if self.__tail == self.__head:
+                self.__tail.next = self.__head
+            else:
+                self.__tail.next = self.__head
+
+            temp.next = None
+
         self.__size -= 1
+        return removed_data
 
-        #return the data field of the node that was removed
 
     def display(self):
         if self.__head == None:
@@ -95,9 +122,50 @@ class CircularLinkedList:
         else:
             temp = self.__head
             print('Here is your list:', end=' ')
-            while temp is not None:
+
+            print(temp.data, end=' ')
+            temp = temp.next
+
+            while temp != self.__head:
                 print(temp.data, end=' ')
+                temp = temp.next
+                
             print()
+
+def main():
+    CLL = CircularLinkedList()
+    CLL.insert_at_tail(10)
+    CLL.insert_at_tail(20)
+    CLL.display()
+    CLL.insert_at_tail(30)
+    CLL.display()
+    CLL.insert_at_head(5)
+    CLL.display()
+    CLL.insert_at_head(1)
+    CLL.display()
+    print()
+
+    print("Removed", CLL.remove_from_head(), "from head of the list")
+    CLL.display()
+    print()
+
+    print("Removed", CLL.remove_from_head(), "from head of the list")
+    CLL.display()
+    print()
+
+    print("Removed", CLL.remove_from_tail(), "from tail of the list")
+    CLL.display()
+    print()
+
+    print("Removed", CLL.remove_from_tail(), "from tail of the list")
+    CLL.display()
+    print()
+
+    print("Removed", CLL.remove_from_tail(), "from tail of the list")
+    CLL.display()
+    print()
+
+main()
 
 
 
