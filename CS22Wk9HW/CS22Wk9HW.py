@@ -27,6 +27,7 @@ class MinHeap():
             return None
         
         if len(self.heap) == 1:
+            self.size -= 1
             return self.heap.pop()
         
         value = self.heap[0]
@@ -38,14 +39,14 @@ class MinHeap():
 
     def insert(self, value):
         self.heap.append(value)
+        self.size += 1
 
         current = len(self.heap) - 1
 
         while current > 0 and self.heap[current] < self.heap[self.get_parent(current)]:
-            self.swap(current, self.get_parent(current))
-            current = self.get_parent(current)
-        
-        self.size += 1
+            parent = self.get_parent(current)
+            self.swap(current, parent)
+            current = parent
 
     def sink_down(self, index):
         smallest = index
@@ -60,7 +61,7 @@ class MinHeap():
             #check if right child exists
             if right < len(self.heap) and self.heap[right] < self.heap[smallest]:
                 smallest = right
-        
+            #if the smallest is not the parent, swap it
             if smallest != index:
                 self.swap(index, smallest)
                 index = smallest
