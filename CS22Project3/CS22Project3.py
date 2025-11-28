@@ -17,6 +17,7 @@ class BinarySearchTree:
         self.root = None
 
     def insert_new_node(self, new_node):
+        #insert first node if none are present
         if self.root is None:
             self.root = new_node
         else:
